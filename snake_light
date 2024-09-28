@@ -1,0 +1,9 @@
+from pygame import*;from random import*;init();j=display;z=j.set_mode((400,300));c=time.Clock();q=255;t=10;r=draw.rect;S=R,L,D,U=range(K_RIGHT,K_UP+1);s,d,f=[(100,50),(90,50),(80,50)],R,(n:=lambda:(randint(0,39)*t,randint(0,29)*t))()
+while 1:
+ for e in event.get():
+  if e.type==QUIT:quit()
+  if e.type==KEYDOWN:d=k if(k:=e.key)in S else d
+ x,y=s[0];x+=(d==R)*t-(d==L)*t;y+=(d==D)*t-(d==U)*t;s=[(x,y)]+s[:-1];f=n()if s[0]==f else f
+ if not(0<=x<400 and 0<=y<300)or s[0]in s[1:]:break
+ z.fill([q]*3);[r(z,(0,q,0),(*p,t,t))for p in s];r(z,(q,0,0),(*f,t,t));j.update();c.tick(t)
+quit()
